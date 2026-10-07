@@ -1,0 +1,16 @@
+{
+  "name": "clean-browser-refresh",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome/Firefox extension: refresh the page without its query string using a configurable shortcut.",
+  "scripts": {
+    "start:firefox": "web-ext run --source-dir src",
+    "start:chrome": "web-ext run --source-dir src --target chromium",
+    "lint": "web-ext lint --source-dir src",
+    "build": "web-ext build --source-dir src --artifacts-dir dist --filename clean-browser-refresh-{version}.zip --overwrite-dest",
+    "sign:firefox": "web-ext sign --source-dir src --artifacts-dir dist --channel unlisted"
+  },
+  "devDependencies": {
+    "web-ext": "^8.0.0"
+  }
+}

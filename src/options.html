@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clean Browser Refresh – Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Clean Browser Refresh</h1>
+      <p class="intro">
+        Refreshes the page without its URL parameters:
+        <code>https://site.com/page<s>?utm_source=x&amp;id=42</s></code> → <code>https://site.com/page</code>
+      </p>
+
+      <section>
+        <label class="row">
+          <input type="checkbox" id="enabled" />
+          <span>Enable the keyboard shortcut</span>
+        </label>
+      </section>
+
+      <section>
+        <h2>Keyboard shortcut</h2>
+        <div class="shortcut-row">
+          <kbd id="shortcut">—</kbd>
+          <button type="button" id="record">Change</button>
+        </div>
+        <p id="hint" class="hint" role="status"></p>
+        <p class="note">
+          Combine Ctrl, Alt or Cmd with a key (Shift optional), or use a single F1–F12 key
+          (F5 for example). Some shortcuts reserved by the browser (Ctrl+T, Ctrl+W, Ctrl+N…) cannot
+          be intercepted.
+        </p>
+      </section>
+
+      <section>
+        <h2>Options</h2>
+        <label class="row">
+          <input type="checkbox" id="stripHash" />
+          <span>Also remove the fragment (<code>#anchor</code>)</span>
+        </label>
+      </section>
+
+      <section>
+        <h2>Other triggers</h2>
+        <p class="note">
+          Clicking the extension icon does the same thing. You can also set a native browser
+          shortcut (works even on pages where the shortcut above cannot run):
+          <code>chrome://extensions/shortcuts</code> in Chrome, or
+          <code>about:addons</code> → ⚙ → “Manage Extension Shortcuts” in Firefox.
+        </p>
+        <p class="note">Current native shortcut: <kbd id="native">not set</kbd></p>
+      </section>
+
+      <footer>
+        <button type="button" id="reset" class="secondary">Reset</button>
+        <span id="status" role="status"></span>
+      </footer>
+    </main>
+
+    <script src="common.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
